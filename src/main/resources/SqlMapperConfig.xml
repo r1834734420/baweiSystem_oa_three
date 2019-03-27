@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<typeAliases>  
+    <!--   
+        单个别名的定义   
+        type:pojo的全类名  
+        alias:这是实体(pojo)的别名  
+         批量定义别名   
+        name:指定包名，将定义包下的所以entity定义别名，别名为类名(首字母大写或小写都可以)  
+     -->  
+    <package name="com.bawei.pojo" />
+</typeAliases> 
+<!-- 设置分页插件 -->
+<plugins>
+     <plugin interceptor="com.github.pagehelper.PageHelper">
+           <!-- 设置数据库类型 Oracle,Mysql,MariaDB,SQLite,Hsqldb,PostgreSQL六种数据库--> 
+           <!-- 方言-->       
+           <property name="dialect" value="mysql"/>
+     </plugin>
+</plugins>
+</configuration>
